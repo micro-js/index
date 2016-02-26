@@ -14,18 +14,29 @@ Generate a keyed map from a list
 
 ## Usage
 
+Use it to figure out what was created/removed from lists, or to test membership, etc.., e.g.
+
 ```js
 var index = require('@f/index')
+var reduce = require('@f/reduce')
 
+function removedItems (cur, prev) {
+  var map = index(cur, getKey)
+  return reduce(function (removed, item) {
+    if (!map[getKey(item)]) removed.push(item)
+    return removed
+  }, [], prev)
+}
 ```
 
 ## API
 
-### index(arg)
+### index(list, fn)
 
-- `arg` -
+- `list` - The list of things you want to index
+- `fn` - A function that takes an item of `list` and returns a `key` appropriate for use in an object map.
 
-**Returns:**
+**Returns:** An indexed map of the items in `list` to their corresponding `key` as returned by `fn(item)`.
 
 ## License
 
