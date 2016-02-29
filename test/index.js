@@ -12,5 +12,14 @@ var identity = require('@f/identity')
 
 test('should work', function (t) {
   t.deepEqual(index(identity, [1,2,3,4]), {1: 1, 2: 2, 3:3, 4:4})
+  t.deepEqual(index(identity, plus1, [1,2,3,4]), {1: 2, 2:3, 3:4, 4:5})
   t.end()
 })
+
+/**
+ * Helpers
+ */
+
+function plus1 (n) {
+  return n + 1
+}
