@@ -21,7 +21,7 @@ var index = require('@f/index')
 var reduce = require('@f/reduce')
 
 function removedItems (cur, prev) {
-  var map = index(cur, getKey)
+  var map = index(getKey, cur)
   return reduce(function (removed, item) {
     if (!map[getKey(item)]) removed.push(item)
     return removed
