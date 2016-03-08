@@ -31,9 +31,9 @@ function removedItems (cur, prev) {
 
 ## API
 
-### index(keyFn, itemFn?, list)
+### index(keyFn?, itemFn?, list)
 
-- `keyFn` - A function that takes an item of `list` and returns a `key` appropriate for use in an object map.
+- `keyFn` - Optional. Defaults to identity. A function that takes an item of `list` and returns a `key` appropriate for use in an object map.
 - `itemFn` - Optional. If two arguments are passed, `list` is the second argument. Transforms the value in the indexed map.
 - `list` - The list of things you want to index
 

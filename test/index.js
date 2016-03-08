@@ -16,6 +16,11 @@ test('should work', function (t) {
   t.end()
 })
 
+test('should work with only one argument', function (t) {
+  t.deepEqual(index([1, 2, 3]), {1: 1, 2: 2, 3: 3})
+  t.end()
+})
+
 /**
  * Helpers
  */
